@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec /opt/eset/RemoteAdministrator/Agent/ERAAgent --pidfile=/var/run/eraagent.pid
+
