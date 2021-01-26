@@ -1,0 +1,4 @@
+#!/bin/sh
+
+test -f /var/run/esets_daemon.pid
+
