@@ -1,0 +1,17 @@
+#!/bin/sh
+
+ipsec start
+sleep 1
+sv up xl2tpd
+sleep 1
+ipsec up office
+sleep 1
+ipsec status
+echo "c office" | tee -a /var/run/xl2tpd/l2tp-control
+sleep 2
+
+ip route add 10.216.0.0/22 via 10.136.0.1
+ip route add 10.136.0.0/22 via 10.136.0.1
+
+exec sleep infinity
+

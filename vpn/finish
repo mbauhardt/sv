@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "d office" | tee -a /var/run/xl2tpd/l2tp-control
+sleep 1
+ipsec down office
+sleep 1
+sv down xl2tpd
+sleep 1
+ipsec status
+sleep 1
+ipsec stop
+

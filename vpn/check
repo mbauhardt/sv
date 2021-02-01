@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+PPP_ADDR=`ip addr show ppp0 | grep inet | awk '{print $2}'`
+VPN_ROUTE=`ip route show 10.136.0.1 | awk '{print $9}'`
+
+echo $PPP_ADDR
+echo $VPN_ROUTE
+
+[[ $PPP_ADDR == "10.136."* ]] && [[ $PPP_ADDR == $VPN_ROUTE ]]
+
