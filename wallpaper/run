@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export DISPLAY=:0
+feh --bg-scale --randomize --recursive /home/mb/Pictures
+exec snooze -H'*' feh --bg-scale --randomize --recursive /home/mb/Pictures
+
