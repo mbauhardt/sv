@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export DISPLAY=:0
+exec xidle -timeout 180 -program /bin/slock 2>&1
+

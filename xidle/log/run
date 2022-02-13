@@ -1,0 +1,3 @@
+#!/bin/sh
+exec svlogd -tt /home/mb/var/log/xidle
+
