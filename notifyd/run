@@ -1,0 +1,25 @@
+#!/bin/bash
+
+[ -r ./conf ] && . ./conf
+
+if [ -e "$dbus_session_file" ]; then
+  . "$dbus_session_file"
+fi
+
+export DBUS_SESSION_BUS_ADDRESS
+export DBUS_SESSION_BUS_PID
+export DISPLAY=:0
+
+
+mkfifo $TIRAMISU_FIFO 2>&1
+
+{
+  while read -r line; do
+		echo $line
+		aplay /home/mb/.local/share/mysounds/mixkit-long-pop-2358.wav
+    /usr/local/bin/herbe "$line"
+  done < $TIRAMISU_FIFO
+} &
+
+exec tiramisu -o '[#source] #summary: #body' > $TIRAMISU_FIFO 2>&1
+
