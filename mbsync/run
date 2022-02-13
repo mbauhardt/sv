@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "syncing mails..."
+exec snooze -H'*' mbsync datameer 2>&1
+
