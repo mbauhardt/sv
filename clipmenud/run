@@ -1,0 +1,8 @@
+#!/bin/sh
+
+[ -r ./conf ] && . ./conf
+export CM_DIR=$XDG_RUNTIME_DIR
+
+export DISPLAY=:0
+exec clipmenud 2>&1
+
