@@ -10,8 +10,15 @@ ipsec status
 echo "c office" | tee -a /var/run/xl2tpd/l2tp-control
 sleep 2
 
+# datameer.lan
 ip route add 10.216.0.0/22 via 10.136.0.1
 ip route add 10.136.0.0/22 via 10.136.0.1
-
+# datameer.com
+ip route add 212.122.0.0/18 via 10.136.0.1
+# datameer.sh
+ip route add 18.116.126.72/18 via 10.136.0.1
+ip route add 54.204.87.234 via 10.136.0.1
+ip route add 52.200.75.242 via 10.136.0.1
+# make
 exec sleep infinity
 
