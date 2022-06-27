@@ -1,1 +1,3 @@
 XDG_RUNTIME_DIR=/tmp/runtime-$USER
+export CM_SELECTIONS=clipboard
+export CM_SYNC_PRIMARY_TO_CLIPBOARD=0
