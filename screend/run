@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export DISPLAY=:0
+exec snooze -H '*' -M /10 /usr/local/bin/screen-suspend 2>&1
+
