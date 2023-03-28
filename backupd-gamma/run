@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Starting gamma update..."
+# run every week on monday 11:00
+exec snooze -w1 -H11 /usr/bin/rsnapshot gamma 2>&1
+

@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Starting beta update..."
+# run every week day, mon - fri, 10.30am
+exec snooze -w 1-5 -H 10 -M 30 -S 0 /usr/bin/rsnapshot beta 2>&1
+

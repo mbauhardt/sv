@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Starting alpha update..."
+# run every day, every month, mon - fri, every second hour
+exec snooze -d '*' -m '*' -w 1-5 -H /2 /usr/bin/rsnapshot alpha 2>&1
+
