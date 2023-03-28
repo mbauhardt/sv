@@ -1,5 +1,8 @@
 #!/bin/sh
 
 echo "syncing mails..."
-exec snooze -H'*' mbsync datameer 2>&1
+export DISPLAY=:0
+/usr/local/bin/herbe "You have $(/usr/local/bin/mlist -N ~/var/mail/datameer.com/inbox | wc -l) new messages." " " "The following addresses are included in these conversations." " " "$(/usr/local/bin/mlist -N ~/var/mail/datameer.com/inbox | /usr/local/bin/maddr -d | sed 's/"//g' | awk '{print $1}' | sort | uniq)" 2>&1
+
+exec snooze -H '*' -M /10 mbsync -c ~/.config/isync/config datameer 2>&1
 
