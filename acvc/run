@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Starting acvc service, required to connect to the aws vpn."
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
+exec /opt/awsvpnclient/Service/ACVC.GTK.Service 2>&1
+
