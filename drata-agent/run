@@ -1,0 +1,4 @@
+#!/bin/sh
+export DISPLAY=:0
+exec /opt/Drata\ Agent/drata-agent 2>&1
+
